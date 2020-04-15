@@ -1,0 +1,135 @@
+html, body {  /* Select and size the outermost elements so other elements can be set in % */
+	height:100%;
+	width:100%;
+}
+
+body {
+
+  font: 15px arial, sans-serif;
+  background-color: #d9d9d9;
+}
+
+  #main {  /* select element with id="main" */
+   min-height: 95%;
+   max-height: 100%;
+   margin: 0px;
+   padding: 0px;
+   display:  flex;
+   flex-flow: row;
+   border-radius: 30pt;
+  }
+
+  #main > article { /* select articles (if they are inside the element with id="main") */
+
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 15px;
+    flex: 3 2 50%;
+    order: 2;
+  }
+
+  #chatborder {
+    border-style: solid;
+    background-color: #f6f9f6;
+    border-width: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 15px;
+    border-radius: 15px;
+    height: 65%;
+  }
+
+  #chatarea {
+    height: 70%;
+    width: 100%;
+    font: 15px arial, sans-serif;
+  }
+
+  #chatbox {
+    font: 17px arial, sans-serif;
+    height: 22px;
+    width: 100%;
+
+  }
+
+
+  #main > nav {
+   margin: 0px;
+   padding: 0px;
+   border: 0px solid #8888bb;
+   border-radius: 0pt;
+   background: #ffffff;
+           flex: 1 6 20%;
+           order: 1;
+  }
+
+  #main > aside {
+   margin: 0px;
+   padding: 0px;
+   border: 0px solid #8888bb;
+   border-radius: 0pt;
+   color: #ffffff;
+   background: #ffffff;
+           flex: 1 6 20%;
+           order: 3;
+
+   }
+
+#player {
+    width: 200px;
+   }
+
+  header, footer {  /* select all header and footer elements */
+   display: block;
+   margin: 0px;
+   padding: 0px;
+   min-height:2%;
+   border: 0px solid #eebb55;
+   border-radius: 0pt;
+   background: #ffffff;
+   text-align: center;
+   }
+
+  footer {    /* override these attributes just for the footer elements */
+   font-size: 10pt;
+   text-align: left;
+   }
+
+
+
+  /* Changes layout under these conditions : Too narrow to support three columns */
+  /* "at-rules" using the '@' sign is an "advanced" feature */
+  @media all and (max-width: 640px) {
+
+   #main, #page {
+    flex-flow: column;
+    flex-direction: column;
+   }
+
+   #main > article, #main > nav, #main > aside {
+    /* Return them to document order */
+            order: 0;
+   }
+
+   #main > nav, #main > aside, header, footer {
+    min-height: 50px;
+    max-height: 50px;
+   }
+
+   #main > article {
+     min-height: 60%;
+     max-height: 65%;
+   }
+
+};

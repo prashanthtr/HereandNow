@@ -1,0 +1,243 @@
+{
+
+    {
+        "time": <>
+        "date": <dd/mm/yy>
+        "source": <source link>
+        "next_session_time": <
+        "next_session_date": <
+        "poster": <image or link to image>
+        "category": "health-wellness/Education/artsncrafts/performances/workshops"
+        "synopsis": "Text: This event is about a yoga session"
+        "link": <link - instalive/zoom>
+    }
+
+}
+
+* Cult-fit
+
+* Mindfulness
+
+Database:
+
+To start with, the database contains a list of current and recurring events that
+happen through the day. The categories are split into:
+
+1) Television
+   - ramayan : Time: 9am and 9pm, episode number:, episode synopsis: (based on
+     start-date), 78 episodes
+   - mahabharath: Time: 11am, episode number:, episode synopsis: (based on
+     start-date), 94 episodes
+
+2) Fitness (dynamic requries some twitter scraping)
+   - Cult-fit sessions:
+     - Session time: , Next session: , Conducted by:, synopsis:,
+   - Do you know: You can real-time feedback on your workout session in Cultfit
+     and do it along with your friends. Want to know more?
+
+
+4) Mindfullness:
+   - Want to experience a little bit of silence with yourself: Want to try quick
+     session of mindfullness
+
+   - Check out this session that is happening:
+     http://www.freemindfulness.org/covid19
+
+   - N number of people are using Headspace now and total of N people are using
+     it (as of Date). It has a free collection of Y videos for guided
+     meditations.
+     - DO you want to check it out too?
+       https://www.headspace.com/covid-19
+   - Vidyamala
+     Time: 7pm IST? GST?
+     Location/link: https://www.facebook.com/events/1596246617196758/
+     Theme of the day: (if available)
+     Past themes:
+
+   - Breathworks elearning mindfullness
+     https://elearning.breathworks-mindfulness.org.uk/login/index.php
+
+5) Learning
+   - Do you have a specific academic interest:
+   - MIT's creative learning courses for educators
+
+
+6) LIVE MUSIC MAKING:
+   - splink
+
+3) Tinerking with browser (Static resource) {not yet live and online}
+  - play your music instrument: Collection of fun games on musical rhythms
+    - Name:
+    - Description :
+    - Link :
+    - target population:
+  - Learning games:
+
+
+Some examples that I found are:
+
+Online Cult-fit sessions: https://twitter.com/BeCureFit?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+Shared music making http://plink.in/
+Online e-learning courses with a community: https://learn.media.mit.edu/lcl/
+
+
+
+Insta-handles
+
+- #TogetherAtHome
+  https://www.globalcitizen.org/en/content/topics/together-at-home/
+
+STory telling
+- karadi tales https://www.facebook.com/pg/karaditales/posts/
+  - Day, time, event synopsis, category ,
+-
+
+Workshops
+@madrasphotoblogs.
+
+talks
+https://mic.gov.in/iflts_upcoming.php
+
+
+Story telling
+Oliver jeffers
+https://www.instagram.com/p/B-nMT3_htSi/
+
+
+Pride Art Showcase by Hyderabad-based Mobbera Foundation goes online
+LGBT
+https://www.instagram.com/mobberafoundation/?hl=en
+
+
+
+Heritage at home
+https://www.instagram.com/explore/tags/sketchwithintach/
+Does not seem to be very popular
+Zoom link: If its on zoom
+
+
+Diva yoga free lessons
+https://www.instagram.com/thedivayoga/?hl=en
+thedivayoga
+
+
+Attakalari dance workshops
+https://www.picuki.com/profile/attakkalari_centre
+
+
+
+Story telling Starlight Shrinithi
+https://www.instagram.com/childrenofthestarlight/
+
+
+Museums
+
+https://www.theguardian.com/travel/2020/mar/23/10-of-the-worlds-best-virtual-museum-and-art-gallery-tours
+
+
+Live events
+
+Cult fitness
+Online story telling sessions (karadi tales)
+janaki sabesh
+Rajesh vaidhya insta
+Spb listeners choice Facebook
+136.1 yoga studio going live everyday four sessions
+Qmath - materials free
+
+Free webinar on how to master accountancy with ease (Apr 8 5pm)
+
+Samarpana for arts and we'll being
+Going live with daily schedules
+Morning - yoga breathing
+Instrumental
+Evening - dance
+Publish
+12:30 pm art heals
+Vishnu R
+
+Free online counseling (Apr 8-30)
+Rebuild care magesh
+10am -4pm
+#rebuildcarecounselling
+
+Oral care (dental hygeine sessions)
+Smile and glow
+
+Drawasaurus
+Drawing and guessing game
+Primary tournament room
+Live Puzzles (online) pictionary
+Gayathri
+
+Food for thought with paddu ka
+Episode on IGTV
+#foodforthoughtwithpadhukka
+
+Online gagra Bollywood class
+5$ per person
+
+Learning together to engage kids with art
+Day 14 for 21
+Ganga (video)
+
+Nritya aradhana
+Tribute Pandit Ravishankar
+
+Online happiness program
+Meditation for balanace (might be paid)
+Registration link
+
+Alex- music live
+
+Mottamadi music
+
+Everyday-nights
+
+
+* Heritage at home links
+
+April 8, 4.30 pm: A virtual walk through Sampangiramanagara by Hita Unnikrishnan.
+
+April 9, 4.30 pm: Re-Reading the Spatialisation of Bangalore City through an Epidemic, a talk by Sonali Dhanpal
+
+April 10, 4.30 pm: Documenting Bengaluru’s Heritage: A photographer's journey, a workshop by PeeVee
+
+April 11, 4.30 pm: Unwept, Unhonoured and Unsung: The “Lost” Life & Times of Sir Albion Rajkumar Banerji, CSI, CIE, ICS (Retd.), a visual presentation by Siddharth Raja
+
+April 12, 4.30 pm: The Temple as a Performance Space, by Gayathri Iyer
+
+April 13, 4.30 pm: A Virtual Open House at a Conservation Site: The Octroi Post at Mysore Road, by Chetana Hamsagar, Ramya Rajan and Pankaj Modi
+
+April 14, 4.30 pm: The Bengaluru Heritage Quiz! by Thejaswi Udupa
+
+World Heritage Day, April 18, 4 pm: Shared Cultures, Shared Heritage, Shared Responsibilities - A Conversation between architect Bijoy Ramachandran and artist Suresh Jayaram
+
+Log on to Intach’s Instagram or Facebook page to participate in the #SketchWithINTACH #HeritageAtHome sketching event, beginning on April 8, led by architect Sahesra Muguntan.
+
+Click on https://zoom.us/j/196574891?pwd=Z2R5cS9qRkRwTGFMaWRqd3AxYm1aZz09 to participate.
+
+
+* nagaland
+
+April 4: Mengu Suokhrie
+
+April 5: Nise Meruno
+
+April 6: Kekhrie Ringa
+
+April 7: Atsa Lang Roths
+
+April 8: Metet Jamir
+
+April 9: Sunep Lemtur
+
+April 10: Thunglamo Ngullie
+
+April 11: Tali Angh
+
+April 12: Tetseo Sisters
+
+April 13: Imliakum Aier
+
+April 14: Alobo Naga

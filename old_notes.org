@@ -1,0 +1,85 @@
+
+
+//my version of the CLIPS trigger rule - that looks for specific conditions in
+//the global database that are satisfied to determine the validity of the rule.
+
+
+
+// var promise = job1();
+
+// //job1, job2, and job3 are all input operations.
+
+// // job1,2,3,4 has a resolve or reject based on the input patterns
+
+// // At the end of the all rejections, new promise is started to continue the qnA.
+
+// promise
+// .then(function(data1) {
+//     console.log('data1', data1);
+//     return job2();
+// })
+
+// .then(function(data2) {
+//     console.log('data2', data2);
+//     return 'Hello world';
+// })
+
+// .then(function(data3) {
+//     console.log('data3', data3);
+// });
+
+// function job1() {
+//     return new Promise(function(resolve, reject) {
+//         setTimeout(function() {
+//             resolve('result of job 1');
+//         }, 1000);
+//     });
+// }
+
+// function job2() {
+//     return new Promise(function(resolve, reject) {
+//         setTimeout(function() {
+//             resolve('result of job 2');
+//         }, 1000);
+//     });
+// }
+
+
+// Promise.all returns a promise to resolve matched patterns to make a decision
+
+// this recursive construct is totally necessary for asynchronous loops with a dynamic condition (no fixed number of steps)
+
+
+// async request to the webscraper might work actually
+// async request to the database
+//
+
+
+
+
+// Would you like to check out __ ?
+// Would you like to check out an art-based performance series that is being
+// telecasted in INSTA live right now?
+
+// In the meantime - ____ is happening
+
+
+// Condition: Based on typing speed of responses: (surprise)
+// As we are talking, X number of people are doing Y? Would you like to check it out.
+// Example: As we are talking, 80 people joined the cultFit workout challenge that is happening right now.
+
+// Condition: Based on typing speed of responses:
+// While you are thinking about X - would you want to consider Y?
+
+// Example: While you are thinking about my last question, would you like to check out this cult-fit challenge that is happening currently now.
+
+// Condition: Based on activity/interest that they did before
+// Earlier you said about X, would you now be interested in Y?
+
+
+// You seem to be too immersed in X - would you like to be distracted with ?
+
+
+// If nothing matches:
+// Relive your childhood dreams, and start tinkering with musical instruments.
+// There are resources that you can check out here:
