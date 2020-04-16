@@ -30,7 +30,7 @@ body {
     padding-left: 25px;
     box-shadow: 5px 5px 5px grey;
     border-radius: 15px;
-    flex: 3 2 50%;
+    flex: 3 2 60%;
     order: 2;
   }
 
@@ -51,9 +51,10 @@ body {
   }
 
   #chatarea {
-    height: 70%;
+    height: 90%;
     width: 100%;
-    font: 15px arial, sans-serif;
+    font: 14px arial, sans-serif;
+    overflow: scroll;
   }
 
   #chatbox {
@@ -61,6 +62,14 @@ body {
     height: 22px;
     width: 100%;
 
+  }
+
+  .pclass {
+    font: 12px arial, calibri;
+    background-color: #add8e6;
+    box-shadow: 2px 2px 2px grey;
+    overflow: scroll;
+    height: 25%;
   }
 
 
