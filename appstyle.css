@@ -1,8 +1,6 @@
 html, body {  /* Select and size the outermost elements so other elements can be set in % */
 	height:100%;
 	width:100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 body {
