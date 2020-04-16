@@ -128,7 +128,7 @@ body {
 
   /* Changes layout under these conditions : Too narrow to support three columns */
   /* "at-rules" using the '@' sign is an "advanced" feature */
-  @media all and (max-width: 640px) {
+  @media all and (max-width: 840px) {
 
    #main, #page {
     flex-flow: column;
