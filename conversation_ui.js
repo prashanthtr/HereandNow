@@ -371,7 +371,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 //redundantly displaying synopsis
                 //last_answer = answer;
                 //subset = newArr;
-                next_question = "Interested or looking for something different?";
+                next_question = "Interested to <a href=" + selEvent.link  + " target=_blank> know more on the event </a> or looking for something different?";
 
                 answer = ""
                 chatBox.innerHTML += hereandNow + next_question + "<br>"
@@ -389,7 +389,8 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 subset = skipN(subset, 0)
                 //last_answer = answer;
                 //subset = newArr;
-                next_question = "Interested";
+                next_question = "Interested to <a href=" + selEvent.link  + " target=_blank> know more on the event </a> ? "
+                //"Interested to know more (" + selEvent.link + ")?";
                 chatBox.innerHTML += hereandNow + next_question + "<br>"
                 //askQuestion("Interested?", newArr, selEvent);
             }
@@ -402,7 +403,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 //subset = newArr;
                 //console.log(newArr.length)
                 //last_answer = answer;
-                next_question = "Interested or looking for something different?";
+                next_question = "Interested to <a href=" + selEvent.link  + "target=_blank> know more on the event </a> or looking for something different?";
                 answer = ""
                 chatBox.innerHTML += hereandNow + next_question + "<br>"
                 //askQuestion(answer, next_question, subset, selEvent);
@@ -410,8 +411,8 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 //askQuestion("Interested or looking for something different? ", newArr, selEvent);
             }
             else{
-                chatBox.innerHTML += hereandNow + "Hope you have a good time at the event! <br>"
-                chatBox.innerHTML += "Please drop by later for more events! <br>"
+                chatBox.innerHTML += hereandNow + "We will more events for you soon! <br>"
+                chatBox.innerHTML += "Please drop by later! <br>"
                 console.log("Please come back to check if there are any events!")
                 endOfSession = true
                 //readlineInterface.close();
