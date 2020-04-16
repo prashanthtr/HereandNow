@@ -5,7 +5,7 @@
 // const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
 var d = new Date();
-var fwindow = 9;
+var fwindow = 7;
 var db = {};
 
 var chatBox = null;
@@ -17,6 +17,8 @@ var selEvent = null;
 var subset = []
 var next_question = ""
 var endOfSession = false
+
+var hereandNow = "<b> HereandNow ->> </b>  "
 
 // const fs = require('fs');
 // let jsonData = {}
@@ -105,6 +107,7 @@ function buildDateConstraints( ){
     var month = d.getMonth()+1;
     var date = d.getDate();
 
+    var end_date = d.getDate();
 
     var hours = d.getHours();
     var minutes = d.getMinutes();
@@ -137,15 +140,15 @@ function buildDateConstraints( ){
         end_hour_string = "0"+ (hours+fwindow)+""
     }
     else if ( hours + fwindow > 23 ){
-        start_hour_string =  "00"; //reset to beginning of day
+        //start_hour_string =  "00"; //do not
         end_hour_string =  (hours + fwindow)%23 + "";
-        date = date + 1;
+        end_date = end_date + 1;
         if( date >= getMonthDays(month)){
             month = (month + 1)%12;
-            date = date%(getMonthDays(month-1));
+            end_date = end_date%(getMonthDays(month-1));
         }
         else{
-            date = date%getMonthDays(month)
+            end_date = end_date%getMonthDays(month)
         }
 
     }
@@ -160,6 +163,7 @@ function buildDateConstraints( ){
     dateConstraint.date = date + "/" + month + "/" + year;
     dateConstraint.start_time = start_time
     dateConstraint.end_time = end_time
+    dateConstraint.end_date = end_date;
 
     console.log(dateConstraint)
     return dateConstraint;
@@ -177,8 +181,10 @@ function getRecommendation( database, constraints ){
         //console.log(el.date + " "  + el.start_time + " " + constraints.start_time  + " " + constraints.end_time + " " + timeCompare( constraints.start_time, el.start_time, "<=" ) + " " + timeCompare( constraints.end_time, el.start_time, ">=" ) + " " + (el.date == constraints.date))
         //if(el.end_time == "unknown"){
 
-        return el.date == constraints.date
-        // && timeCompare( constraints.start_time, el.start_time, "<=" ) &&   timeCompare( constraints.end_time, el.start_time, ">=" )
+        return el.date == constraints.date || el.date == constraints.end_date && timeCompare( constraints.start_time, el.start_time, "<=" ) &&   timeCompare( constraints.end_time, el.start_time, ">=" )
+
+        //both today and tomorrow incase of overlapping windows
+
 
         //}
     });
@@ -229,7 +235,7 @@ function start () {
         start_string = "Let's find something interesting for you! \nFirst, Are there any specific events that you wanna know more about (event handle, group name, workshop name)?\n"
     }
     //console.log(subset)
-    chatBox.innerHTML += start_string + "<br>";
+    chatBox.innerHTML += hereandNow + start_string + "<br>";
     next_question = start_string;
     answer = "First";
     //askQuestion("First", start_string, subset, null)
@@ -274,7 +280,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
         else if( subset.length > 0 &&  directMatch(subset, trimmedAns).length != 0 ){ //returns index, store somewhere
             //handle match
             response3.call(directMatch(subset, trimmedAns));
-            chatBox.innerHTML += "Hope you have a good time at the event! <br>"
+            chatBox.innerHTML += hereandNow + "Hope you have a good time at the event! <br>"
             chatBox.innerHTML += "Please refresh or come back later to find new events <br>"
 
             //The chat is over now!
@@ -292,12 +298,13 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                     //console.log("Here are the details of the event")
                     //console.log(lastSelectedEvent.synopsis);
 
-                    chatBox.innerHTML += "Here are the details of the event : "
+                    chatBox.innerHTML += hereandNow +  "Here are the details of the event : "
                     //console.log("Here are the details of the event")
                     chatBox.innerHTML += "<i> <p class=pclass> " + lastSelectedEvent.synopsis + " </p> </i> <br>"
 
-                    chatBox.innerHTML += "Hope you have a good time at the event! <br>"
-                    chatBox.innerHTML += "The chat is over now! Please refresh or come back later to find new events <br>"
+                    chatBox.innerHTML += hereandNow + "Hope you have a good time at the event! <br>"
+                    chatBox.innerHTML += "We hope that the session was useful! Please refresh the start again or come back later to find new events <br>"
+
 
                     endOfSession = true
 
@@ -312,14 +319,14 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 if( lastSelectedEvent == null){
                     response.call(subset[0]);
 
-                    chatBox.innerHTML += "Here are the details of the event : "
+                    chatBox.innerHTML +=  hereandNow + "Here are the details of the event : "
                     //console.log("Here are the details of the event")
                     chatBox.innerHTML += "<i>  <p class=pclass>" + subset[0].synopsis + " </p> </i> <br>"
                     //console.log(subset[0].synopsis);
                     console.log("Great! Hope you have a good time at the event!")
 
-                    chatBox.innerHTML += "Hope you have a good time at the event! <br>"
-                    chatBox.innerHTML += "We couldn't find any more live events happening now! Please refresh or come back later to find new events <br>"
+                    chatBox.innerHTML += hereandNow + "Hope you have a good time at the event! <br>"
+                    chatBox.innerHTML +=  hereandNow + "We will have more events happening for you soon! Please refresh to start again or come back later to find them <br>"
 
                     endOfSession = true
                     //readlineInterface.close();
@@ -329,7 +336,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                     //console.log("Here are the details of the event")
                     //console.log(lastSelectedEvent.synopsis );
 
-                    chatBox.innerHTML += "Here are the details of the event : "
+                    chatBox.innerHTML += hereandNow + "Here are the details of the event : "
                     chatBox.innerHTML += "<i> <p class=pclass> " + lastSelectedEvent.synopsis + " </p> </i> <br>"
 
                     selEvent = subset[0];
@@ -340,7 +347,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                     next_question = "Is this good or are you interested to know about the other event? "
                     //subset = newArr;
                     answer = ""
-                    chatBox.innerHTML += next_question + "<br>"
+                    chatBox.innerHTML += hereandNow +  next_question + "<br>"
                     //askQuestion(answer, next_question, subset, selEvent);
                 }
 
@@ -354,7 +361,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                     response2.call(subset[dbnum]);
                 }
                 else{
-                    chatBox.innerHTML += "Here are the details of the event : "
+                    chatBox.innerHTML += hereandNow + "Here are the details of the event : "
                     chatBox.innerHTML += "<i> <p class=pclass> " + lastSelectedEvent.synopsis + " </p> </i> <br>"
                     //console.log(lastSelectedEvent.synopsis);
                 }
@@ -367,7 +374,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 next_question = "Interested or looking for something different?";
 
                 answer = ""
-                chatBox.innerHTML += next_question + "<br>"
+                chatBox.innerHTML += hereandNow + next_question + "<br>"
                 //askQuestion(answer, next_question, subset, selEvent);
                 //askQuestion("Interested or looking for something different? ", newArr, selEvent);
             }
@@ -383,7 +390,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 //last_answer = answer;
                 //subset = newArr;
                 next_question = "Interested";
-                chatBox.innerHTML += next_question + "<br>"
+                chatBox.innerHTML += hereandNow + next_question + "<br>"
                 //askQuestion("Interested?", newArr, selEvent);
             }
             else if( subset.length > 1){
@@ -397,14 +404,14 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
                 //last_answer = answer;
                 next_question = "Interested or looking for something different?";
                 answer = ""
-                chatBox.innerHTML += next_question + "<br>"
+                chatBox.innerHTML += hereandNow + next_question + "<br>"
                 //askQuestion(answer, next_question, subset, selEvent);
 
                 //askQuestion("Interested or looking for something different? ", newArr, selEvent);
             }
             else{
-                chatBox.innerHTML += "Hope you have a good time at the event! <br>"
-                chatBox.innerHTML += "Please come back later for more events! <br>"
+                chatBox.innerHTML += hereandNow + "Hope you have a good time at the event! <br>"
+                chatBox.innerHTML += "Please drop by later for more events! <br>"
                 console.log("Please come back to check if there are any events!")
                 endOfSession = true
                 //readlineInterface.close();
@@ -416,7 +423,7 @@ function askQuestion ( answer, question_string, lastSelectedEvent ){
         }
         else{
             //no subsets
-            chatBox.innerHTML +=  " Dont think I understood your response. Please try again! "
+            chatBox.innerHTML +=  hereandNow + " Dont think I understood your response. Please try again! <br>"
             //console.log(" Dont think I understood your response. Please try again! ")
             //var nextQNum = 1 + Math.floor( Math.random()* (question_phrases.length-1) );
             //last_answer = answer+Date.now();
@@ -486,8 +493,8 @@ function skipN ( arr, n ){
 function question (){
 
     var reply_phrases = [];
-    const reply = ["Would like to check out the event ", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="uknown"?"":(" to " + this.end_time))].join("");
-    chatBox.innerHTML += reply + "<br>"
+    const reply = ["Would like to check out the event by ", this.event_name, " on ", this.date + " from " + this.start_time + (this.end_time=="uknown"?"":(" to " + this.end_time))].join("");
+    chatBox.innerHTML += hereandNow + reply + "<br>"
     //console.log(reply);
 }
 
@@ -495,8 +502,8 @@ function question (){
 function response2 (){
 
     var reply_phrases = [];
-    const reply = ["We found an event for you. The event ", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="uknown"?".":(" to " + this.end_time))].join("");
-    chatBox.innerHTML += reply + "<br>"
+    const reply = ["We found an event for you. The event by ", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="unknown"?".":(" to " + this.end_time))].join("");
+    chatBox.innerHTML += hereandNow + reply + "<br>"
     console.log(reply);
 }
 
@@ -504,8 +511,8 @@ function response2 (){
 function response3 (){
 
     var reply_phrases = [];
-    const reply = ["We found an event that you were looking for! The event ", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="uknown"?".":(" to " + this.end_time))].join("");
-    chatBox.innerHTML += reply + "<br>"
+    const reply = ["We found an event that you were looking for! The event by", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="unknown"?".":(" to " + this.end_time))].join("");
+    chatBox.innerHTML += hereandNow + reply + "<br>"
     //console.log(reply);
 }
 
@@ -514,8 +521,8 @@ function response3 (){
 function response (){
 
     var reply_phrases = [];
-    const reply = ["Would like to check out the event ", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="uknown"?"":(" to " + this.end_time))].join("");
-    chatBox.innerHTML += reply + "<br>"
+    const reply = ["Would like to check out the event by", this.event_name, " is happening on ", this.date + " from " + this.start_time + (this.end_time=="unknown"?"":(" to " + this.end_time))].join("");
+    chatBox.innerHTML += hereandNow + reply + "<br>"
     //console.log(reply);
 }
 
