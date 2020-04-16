@@ -54,7 +54,8 @@ body {
     height: 90%;
     width: 100%;
     font: 14px arial, sans-serif;
-    overflow: scroll;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   #chatbox {
@@ -68,8 +69,9 @@ body {
     font: 12px arial, calibri;
     background-color: #add8e6;
     box-shadow: 2px 2px 2px grey;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 25%;
+    scroll-behavior: smooth;
   }
 
 
