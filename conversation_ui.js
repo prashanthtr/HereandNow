@@ -5,7 +5,7 @@
 // const readlineInterface = readline.createInterface(process.stdin, process.stdout);
 
 var d = new Date();
-var fwindow = 7;
+var fwindow = 24;
 var db = {};
 
 var chatBox = null;
@@ -163,9 +163,9 @@ function buildDateConstraints( ){
     dateConstraint.date = date + "/" + month + "/" + year;
     dateConstraint.start_time = start_time
     dateConstraint.end_time = end_time
-    dateConstraint.end_date = end_date;
+    dateConstraint.end_date = end_date + "/" + month + "/" + year;
 
-    console.log(dateConstraint)
+    //console.log(dateConstraint)
     return dateConstraint;
 }
 
@@ -181,7 +181,9 @@ function getRecommendation( database, constraints ){
         //console.log(el.date + " "  + el.start_time + " " + constraints.start_time  + " " + constraints.end_time + " " + timeCompare( constraints.start_time, el.start_time, "<=" ) + " " + timeCompare( constraints.end_time, el.start_time, ">=" ) + " " + (el.date == constraints.date))
         //if(el.end_time == "unknown"){
 
-        return el.date == constraints.date || el.date == constraints.end_date && timeCompare( constraints.start_time, el.start_time, "<=" ) &&   timeCompare( constraints.end_time, el.start_time, ">=" )
+        return el.date == constraints.date || el.date == constraints.end_date
+
+        //&& timeCompare( constraints.start_time, el.start_time, "<=" ) &&   timeCompare( constraints.end_time, el.start_time, ">=" )
 
         //both today and tomorrow incase of overlapping windows
 
