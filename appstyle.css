@@ -1,6 +1,7 @@
 html, body {  /* Select and size the outermost elements so other elements can be set in % */
 	height:100%;
 	width:100%;
+  scroll: auto;
 }
 
 body {
@@ -10,13 +11,13 @@ body {
 }
 
   #main {  /* select element with id="main" */
-   min-height: 95%;
+   min-height: 84%;
    max-height: 100%;
    margin: 0px;
    padding: 0px;
    display:  flex;
    flex-flow: row;
-   border-radius: 30pt;
+   border-radius: 0pt;
   }
 
   #main > article { /* select articles (if they are inside the element with id="main") */
@@ -51,10 +52,10 @@ body {
   }
 
   #chatarea {
-    height: 90%;
+    min-height: 90%;
     width: 100%;
     font: 14px arial, sans-serif;
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
   }
 
@@ -69,7 +70,7 @@ body {
     font: 12px arial, calibri;
     background-color: #add8e6;
     box-shadow: 2px 2px 2px grey;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 25%;
     scroll-behavior: smooth;
   }
@@ -81,8 +82,8 @@ body {
    border: 0px solid #8888bb;
    border-radius: 0pt;
    background: #ffffff;
-           flex: 1 6 20%;
-           order: 1;
+   flex: 1 6 20%;
+   order: 1;
   }
 
   #main > aside {
@@ -105,7 +106,7 @@ body {
    display: block;
    margin: 0px;
    padding: 0px;
-   min-height:2%;
+   min-height:8%;
    border: 0px solid #eebb55;
    border-radius: 0pt;
    background: #ffffff;
